@@ -37,12 +37,12 @@ public class bomb : MonoBehaviour
         Collider[] drons = Physics.OverlapSphere(transform.position, range, layerMask);
         foreach (Collider drone in drons)
         {
-            Destroy(drone.gameObject);
+            drone.GetComponentInParent<DroneAI>().OnDamageProcess(999);
         }
         
         explosion.position = transform.position;
         expEffect.Play();
         expAudio.Play();
-        Destroy(gameObject);
+        GetComponent<DroneAI>().OnDamageProcess(999);
     }
 }

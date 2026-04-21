@@ -237,7 +237,13 @@ public class GrabObject : MonoBehaviour
                 if (weapon != null)
                 {
                     weapon.itemEffect.SetActive(true);
+                    weapon.HideAmmoUIImmediate();
                 }
+            }
+
+            if (releasedObject.layer == LayerMask.NameToLayer("Drone"))
+            {
+                releasedObject.GetComponent<bomb>().isbomb = true;
             }
 
             _grabbedObjects.Remove(releasedObject);
@@ -314,6 +320,7 @@ public class GrabObject : MonoBehaviour
                     gun.leftDamge = weapon.damage;
                 }
                 weapon.itemEffect.SetActive(false);
+                weapon.ShowAmmoUI();
             }
         }
         
@@ -322,7 +329,6 @@ public class GrabObject : MonoBehaviour
             targetObject.transform.localPosition = Vector3.zero;
             targetObject.transform.localEulerAngles = new Vector3(0f, 90f, 0f);
             targetObject.GetComponent<Rigidbody>().isKinematic = false;
-            targetObject.GetComponent<bomb>().isbomb = true;
             targetObject.GetComponent<NavMeshAgent>().enabled = false;
         }
         
@@ -390,6 +396,7 @@ public class GrabObject : MonoBehaviour
                     gun.leftDamge = weapon.damage;
                 }
                 weapon.itemEffect.SetActive(false);
+                weapon.ShowAmmoUI();
             }
         }
         
@@ -435,6 +442,11 @@ public class GrabObject : MonoBehaviour
     public bool IsHandGrabbing(ARAVRInput.Controller controller)
     {
         return GetGrabbedObject(controller) != null;
+    }
+
+    public bool IsObjectGrabbed(GameObject targetObject)
+    {
+        return targetObject != null && _grabbedObjects.Contains(targetObject);
     }
 
     private HandGrabState GetHandState(ARAVRInput.Controller controller)

@@ -77,6 +77,17 @@ public class Gun : MonoBehaviour
             return;
         }
 
+        Weapon weapon = weaponObject.GetComponentInChildren<Weapon>();
+        if (weapon == null)
+        {
+            return;
+        }
+
+        if (!weapon.ConsumeAmmo())
+        {
+            return;
+        }
+
         LineRenderer lr = weaponObject.GetComponent<LineRenderer>();
         if (lr == null)
         {
