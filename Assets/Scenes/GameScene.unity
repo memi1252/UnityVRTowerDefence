@@ -92654,6 +92654,8 @@ GameObject:
   - component: {fileID: 1745422925}
   - component: {fileID: 1745422924}
   - component: {fileID: 1745422923}
+  - component: {fileID: 1745422928}
+  - component: {fileID: 1745422927}
   - component: {fileID: 1745422922}
   - component: {fileID: 1745422921}
   - component: {fileID: 1745422920}
@@ -92914,6 +92916,44 @@ Transform:
   - {fileID: 1305238350}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -179.295, z: 0}
+--- !u!114 &1745422927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745422918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13115661366243089e3a095078e274cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabObject: {fileID: 1745422919}
+  bagToggle: {fileID: 1745422928}
+  disableWhenBagOpen: []
+  bagBodyScale: {x: 0.24, y: 0.24, z: 0.24}
+  triggerSize: {x: 0.2, y: 0.2, z: 0.2}
+  slotCount: 4
+  itemCount: 3
+  itemSpawnOffset: {x: 0.35, y: 0, z: 0.5}
+  itemSpacing: 0.15
+--- !u!114 &1745422928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745422918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb959bb739da42e684e8605c3b56affc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bagRoot: {fileID: 0}
+  followTarget: {fileID: 0}
+  localOffset: {x: 0.2, y: -0.1, z: 0.25}
+  localEuler: {x: 0, y: 180, z: 0}
+  disableWhenBagOpen: []
 --- !u!4 &1746486769 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 2aad511a3bf674ee3a4d7577e87e930d, type: 3}
