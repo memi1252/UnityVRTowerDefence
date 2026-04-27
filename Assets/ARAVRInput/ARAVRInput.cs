@@ -29,7 +29,8 @@ public static class ARAVRInput
         Two = OVRInput.Button.Two,
         Thumbstick = OVRInput.Button.PrimaryThumbstick,
         IndexTrigger = OVRInput.Button.PrimaryIndexTrigger,
-        HandTrigger = OVRInput.Button.PrimaryHandTrigger
+        HandTrigger = OVRInput.Button.PrimaryHandTrigger,
+        Start = OVRInput.Button.Start,
 #endif
     }
 

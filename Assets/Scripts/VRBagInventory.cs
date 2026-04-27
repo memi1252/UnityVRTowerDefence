@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class VRBagInventory : MonoBehaviour
@@ -24,6 +25,7 @@ public class VRBagInventory : MonoBehaviour
             triggerCollider.isTrigger = true;
         }
     }
+    
 
     private void Update()
     {

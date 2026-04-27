@@ -23,7 +23,7 @@ public class VRBagToggle : MonoBehaviour
 
     private void Update()
     {
-        if (ARAVRInput.GetDown(ARAVRInput.Button.One, ARAVRInput.Controller.LTouch))
+        if (ARAVRInput.GetDown(ARAVRInput.Button.Two, ARAVRInput.Controller.LTouch))
         {
             ToggleBag();
         }

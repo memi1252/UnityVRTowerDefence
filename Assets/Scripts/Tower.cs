@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Tower : MonoBehaviour
@@ -26,7 +27,7 @@ public class Tower : MonoBehaviour
             // hp가 0이하이면 제거
             if (_hp <= 0)
             {
-                Destroy(gameObject);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
     }

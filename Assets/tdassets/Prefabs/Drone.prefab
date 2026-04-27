@@ -79,13 +79,13 @@ MonoBehaviour:
   - {fileID: 169414411030051685, guid: d629bda3a1685d24da329e54d451319f, type: 3}
   - {fileID: 7628761496445532371, guid: 11d68aa4da0f27e4cbf10e28ff0f1274, type: 3}
   - {fileID: 2535082215678935370, guid: 1a3ae2ad9641a0d41a3b3a9def4ad0cd, type: 3}
-  moveSpeed: 1
+  moveSpeed: 2
   attackRange: 3
   attackExitRange: 3.5
-  attackDelayTime: 5
+  attackDelayTime: 1.5
   attackDamage: 2
   weaponDropChance: 0.35
-  hp: 20
+  hp: 15
   isDie: 0
 --- !u!195 &4230311041900487737
 NavMeshAgent:

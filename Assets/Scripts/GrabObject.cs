@@ -243,13 +243,19 @@ public class GrabObject : MonoBehaviour
 
             if (releasedObject.layer == LayerMask.NameToLayer("Drone"))
             {
-                releasedObject.GetComponent<bomb>().isbomb = true;
+                StartCoroutine(ThrowDrone(releasedObject));
             }
 
             _grabbedObjects.Remove(releasedObject);
             handState.GrabbedObject = null;
             handState.IsRemoteGrab = false;
         }
+    }
+
+    IEnumerator ThrowDrone(GameObject releasedObject)
+    {
+        yield return new WaitForSeconds(0.3f);
+        releasedObject.GetComponent<bomb>().isbomb = true;
     }
 
     IEnumerator GrabbingAnimation(HandGrabState handState, GameObject targetObject)
@@ -328,7 +334,7 @@ public class GrabObject : MonoBehaviour
         {
             targetObject.transform.localPosition = Vector3.zero;
             targetObject.transform.localEulerAngles = new Vector3(0f, 90f, 0f);
-            targetObject.GetComponent<Rigidbody>().isKinematic = false;
+            targetObject.GetComponent<Rigidbody>().isKinematic = true;
             targetObject.GetComponent<NavMeshAgent>().enabled = false;
         }
         
@@ -405,7 +411,6 @@ public class GrabObject : MonoBehaviour
             targetObject.transform.localPosition = Vector3.zero;
             targetObject.transform.localEulerAngles = new Vector3(0f, 90f, 0f);
             targetObject.GetComponent<Rigidbody>().isKinematic = false;
-            targetObject.GetComponent<bomb>().isbomb = true;
             targetObject.GetComponent<NavMeshAgent>().enabled = false;
         }
     }
